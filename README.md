@@ -107,7 +107,7 @@ https://mmm-m1nz.onrender.com
 - belongs_to :food
 
 # 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/ae352bf5be588cf8ec54f9fc0dd36efa.png)](https://gyazo.com/ae352bf5be588cf8ec54f9fc0dd36efa)
+[![Image from Gyazo](https://i.gyazo.com/6dce7f32235edf5f883ce3ffa14effa0.png)](https://gyazo.com/6dce7f32235edf5f883ce3ffa14effa0)
 
 # 開発環境
 - フロントエンド
