@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_12_153833) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_16_151725) do
+  create_table "foods", charset: "utf8", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.string "food_name", null: false
+    t.integer "stock", null: false
+    t.integer "quantity_id", null: false
+    t.date "deadline", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_foods_on_user_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -24,4 +36,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_12_153833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "foods", "users"
 end

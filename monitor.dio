@@ -4,11 +4,8 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="トップページ" style="whiteSpace=wrap;html=1;align=center;perimeterSpacing=2;rounded=1;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="40" width="120" height="40" as="geometry"/>
-                </mxCell>
                 <mxCell id="3" value="ログインページ" style="whiteSpace=wrap;html=1;align=center;perimeterSpacing=2;rounded=1;" parent="1" vertex="1">
-                    <mxGeometry x="200" y="40" width="120" height="40" as="geometry"/>
+                    <mxGeometry x="20" y="100" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="新規登録ページ" style="whiteSpace=wrap;html=1;align=center;perimeterSpacing=2;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="200" y="100" width="120" height="40" as="geometry"/>
@@ -64,9 +61,9 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="29" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" target="3" edge="1" source="2">
+                <mxCell id="29" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="3" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="180" y="60" as="sourcePoint"/>
+                        <mxPoint x="190" y="120" as="sourcePoint"/>
                         <mxPoint x="530" y="369.5" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
@@ -89,26 +86,26 @@
                         <mxPoint x="210" y="129.5" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="35" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" target="7" edge="1" source="5">
+                <mxCell id="35" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="5" target="7" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="180" y="300" as="sourcePoint"/>
                         <mxPoint x="210" y="129.5" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="36" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="8">
+                <mxCell id="36" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="8" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="530" y="250" as="sourcePoint"/>
                         <mxPoint x="340" y="240" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="37" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+                <mxCell id="37" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="180" y="60" as="sourcePoint"/>
+                        <mxPoint x="180" y="120" as="sourcePoint"/>
                         <mxPoint x="180" y="180" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="39" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+                <mxCell id="39" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="340" y="120" as="sourcePoint"/>
                         <mxPoint x="340" y="240" as="targetPoint"/>

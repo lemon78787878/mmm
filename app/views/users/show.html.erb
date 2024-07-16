@@ -1,1 +1,41 @@
-<h1>最初はマイページ</h1>
+<div class='user_main'>
+  <div class='greeting'>
+    <h1>こんにちは、<%= @user.nickname %> さん</h1>
+  </div>
+  <div class='main_index'>
+    ご希望のメニューを以下から選択してください
+  </div>
+
+  <ul class='mein-lists'>
+    <li class='list'>
+      <%= link_to foods_path do %>
+        <div class='item-name'>
+          在庫管理
+        </div>
+        <div class='item-img'>
+          <%= image_tag "kaden_reizouko.png" %>
+        </div>
+      <% end %>
+    </li>
+    <li class='list'>
+      <%= link_to "#" do %>
+        <div class='item-name'>
+          レシピ検索
+        </div>
+        <div class='item-img'>
+          <%= image_tag "cooking_recipe.png" %>
+        </div>
+      <% end %>
+    </li>
+    <li class='list'>
+      <%= link_to "#" do %>
+        <div class='item-name'>
+          料理記録
+        </div>
+        <div class='item-img'>
+          <%= image_tag "calender.png" %>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+</div>
