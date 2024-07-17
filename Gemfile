@@ -78,3 +78,4 @@ end
 gem 'pry-rails'
 gem 'devise'
 gem 'ancestry'
+gem 'active_hash'

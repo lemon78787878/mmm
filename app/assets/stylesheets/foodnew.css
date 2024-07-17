@@ -1,0 +1,8 @@
+.foods-sell-contents {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: rgb(251, 242, 232);
+  display: flex;
+  justify-content: center;
+}
