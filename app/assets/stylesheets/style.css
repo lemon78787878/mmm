@@ -148,7 +148,7 @@ a {
 .footer {
   background-color: #ebdcdc;
   padding: 10px 0;
-  margin-top: auto;
+  margin: 5px 0 0 0;
 }
 .copyright {
   text-align: center;

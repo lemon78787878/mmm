@@ -26,12 +26,16 @@
   background-color: #FFF;
   margin: 20px;
   border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 .item-name{
   font-size: 2.5vh;
   color: #112b9b;
   background-color: #ade7f9;
   text-align: center;
+  width: 33vh;
 }
 .item-img {
   width: 33vh;

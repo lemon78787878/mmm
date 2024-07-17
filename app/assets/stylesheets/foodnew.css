@@ -6,3 +6,10 @@
   display: flex;
   justify-content: center;
 }
+
+.foods-sell-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}

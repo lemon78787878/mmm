@@ -1,4 +1,4 @@
-class Quantityuantity < ActiveHash::Base
+class Quantity < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: '個' },
