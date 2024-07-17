@@ -23,9 +23,11 @@
             </li>
           <% end %>
         <% else %>
-          <div>
-            冷蔵庫の中身を登録してください。
-          </div>
+          <%= link_to new_food_path do %>
+            <div>
+              冷蔵庫の中身を登録してください。
+            </div>
+          <% end %>
         <% end %>
       </ul>
     </div>
