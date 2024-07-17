@@ -1,1 +1,51 @@
-<h1>在庫一覧</h1>
+<div class='foods-sell-contents'>
+  <div class="foods-sell-main">
+
+    <%# 在庫一覧 %>
+    <div class='foods-contents'>
+      <h2 class='title'>在庫一覧</h2>
+      <ul class='item-lists'>
+
+        <%# 在庫の一覧詳細が表示される %>
+        <% if @foods.present? %>
+          <% @foods.each do |food| %>
+            <li class='list'>
+              <%= link_to foods_path(food.id) do %>
+              <div class='item-info'>
+                  <h3 class='item-name'>
+                    <%= food.food_name %>
+                  </h3>
+                </div>
+                <div class='item-img-content'>
+                  <%= image_tag food.image, class: "item-img" %>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        <% else %>
+          <div>
+            冷蔵庫の中身を登録してください。
+          </div>
+        <% end %>
+      </ul>
+    </div>
+    <%# /在庫一覧 %>
+
+
+    <%= link_to new_food_path do %>
+      <div class='food-new'>
+        <span class='food-new-text'>在庫を追加する</span>
+        <%= image_tag 'kaden_reizouko.png' , size: '185x50' ,class: "food-new-icon" %>
+      </div>
+    <% end %>
+
+    <div class="sell-btn-contents">
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%= link_to(root_path, class: 'purchase-btn') do %>
+      <%= image_tag 'logo.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <% end %>
+  </div>
+</div>
+
+

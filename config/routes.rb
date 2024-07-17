@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root to: 'devise/sessions#new'
     get 'user', to: 'users#show', as: :user_root
   end
-  resources :foods, only: :index
+  resources :foods, only: [:index, :new, :create]
 
   
 
