@@ -10,14 +10,18 @@ https://mmm-m1nz.onrender.com
 # テスト用アカウント
 - Basic認証ID：admin
 - Basic認証パスワード：2222
-- メールアドレス：
-- パスワード：
+- メールアドレス：test@test.com
+- パスワード：a123456
 
 # 利用方法
-## 在庫管理（未実装）
+## ユーザ管理（実装済）
+1. アプリを開くとログイン画面になる。「ログイン」「新規登録」への遷移ボタンがある。
+2. ログイン後トップページへ遷移する。
+
+## 在庫管理（実装済）
 1. トップページの「食材」から「在庫一覧」へ遷移
 2. 在庫がカテゴリごとに表示され、画面下部に「追加する」がある。
-### 在庫追加（未実装）
+### 在庫追加（実装済）
 1. 「追加する」から新しく食材を登録する画面へ遷移
 2. カテゴリ・食材名・数量・単位・賞味期限を入力し登録できる
 3. 「在庫一覧」に追加される。
@@ -48,7 +52,7 @@ https://mmm-m1nz.onrender.com
 # テーブル設計
 [![Image from Gyazo](https://i.gyazo.com/94eba4623f035e39e45636b1cfe67a7f.png)](https://gyazo.com/94eba4623f035e39e45636b1cfe67a7f)
 
-## users テーブル
+## users テーブル（実装済）
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | nickname           | string | null: false |
@@ -60,7 +64,7 @@ https://mmm-m1nz.onrender.com
 - has_many :foods
 
 
-## foods テーブル
+## foods テーブル（実装済）
 | Column             | Type    | Options     |
 | ------------------ | --------| ----------- |
 | category_id        | integer | null: false |
@@ -76,7 +80,7 @@ https://mmm-m1nz.onrender.com
 - has_one_attached :image
 - has_many :recipes, through: :recipe_foods
 
-## recipes テーブル
+## recipes テーブル（未実装）
 | Column             | Type    | Options     |
 | ------------------ | --------| ----------- |
 | dish               | string  | null: false |
@@ -86,7 +90,7 @@ https://mmm-m1nz.onrender.com
 - has_many :foods, through: :recipe_foods
 - has_many :diaries
 
-## diaries テーブル
+## diaries テーブル（未実装）
 | Column             | Type    | Options     |
 | ------------------ | --------| ----------- |
 | day                | date    | null: false |
@@ -97,7 +101,7 @@ https://mmm-m1nz.onrender.com
 - belongs_to :user
 - belongs_to :diary
 
-## recipe_foods テーブル
+## recipe_foods テーブル（未実装）
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
 | recipe             | references | null: false, foreign_key: true |
@@ -107,7 +111,7 @@ https://mmm-m1nz.onrender.com
 - belongs_to :food
 
 # 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/6dce7f32235edf5f883ce3ffa14effa0.png)](https://gyazo.com/6dce7f32235edf5f883ce3ffa14effa0)
+[![Image from Gyazo](https://i.gyazo.com/76bbbb53ee6ce82ae4fad3713e99e5f0.png)](https://gyazo.com/76bbbb53ee6ce82ae4fad3713e99e5f0)
 
 # 開発環境
 - フロントエンド
