@@ -21,28 +21,16 @@
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #ffffff;
+  color: #090909;
   text-decoration: none;
   user-select: none;
   border: 1px #ffffff solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  background: #fff;
 }
 .nav__btn:hover{
   color: #fff;
   background: #87CEFA;
 }
 
-.nav__logout{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #131314;
-  text-decoration: none;
-  user-select: none;
-  background-color: #fff;
-  border-radius: 3px;
-}
-.nav__logout:hover{
-  opacity: 0.5;
-}

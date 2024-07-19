@@ -1,0 +1,9 @@
+<%= turbo_stream.replace 'recipe' do %>
+  <% if @recipe %>
+    <p id="recipe"><%= @recipe %></p>
+  <% elsif @error %>
+    <p id="recipe"><%= @error %></p>
+  <% else %>
+    <p id="recipe">レシピが見つかりませんでした。</p>
+  <% end %>
+<% end %>

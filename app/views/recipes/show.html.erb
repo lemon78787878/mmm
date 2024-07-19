@@ -1,0 +1,12 @@
+<h1>レシピ</h1>
+
+<% if @recipe %>
+  <p><%= @recipe %></p>
+<% elsif @error %>
+  <p><%= @error %></p>
+  <p>クォータを超過している可能性があります。OpenAIのダッシュボードで使用状況を確認してください。</p>
+<% else %>
+  <p>レシピが見つかりませんでした。</p>
+<% end %>
+
+<%= link_to '別のレシピを検索', new_recipe_path %>
