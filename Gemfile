@@ -84,3 +84,4 @@ gem 'image_processing', '~> 1.2'
 gem 'httparty' # APIリクエストのため
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'openai'
+gem 'simple_calendar'

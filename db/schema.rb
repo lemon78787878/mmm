@@ -40,7 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_19_060453) do
   end
 
   create_table "diaries", charset: "utf8", force: :cascade do |t|
-    t.date "deadline", null: false
+    t.date "diary_day", null: false
     t.string "dish", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

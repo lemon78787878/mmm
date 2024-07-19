@@ -1,57 +1,103 @@
-.calendar-wrap {
-  margin: 0 auto;
-  max-width: 1110px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-@media (max-width: 767.98px) {
-  .calendar-wrap {
-    display: flex;
-    flex-direction: column;
-  }
-}
-.calendar {
+.diaries-sell-contents {
   width: 100%;
-  border-collapse: collapse;
-}
-.calendar th,
-.calendar td {
-  border: 1px solid #000;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: bold;
-}
-.calendar th {
-  padding: 6px 10px;
-}
-.calendar td {}
-@media (max-width: 767.98px) {
-  .calendar th,
-  .calendar td {
-    padding: 6px;
-    font-size: 12px;
-  }
-  .calendar th {
-    padding: 3px 6px;
-  }
+  min-width: 800px;
+  height: 100%;
+  background-color: rgb(251, 242, 232);
+  display: flex;
+  justify-content: center;
 }
 
-.calendar .sun {
-  color: #e17f7e;
-  background-color: #f8e4e2;
+.diaries-sell-main {
+  background-color: #FFF;
+  width: 80vw;
+  min-width: 450px;
+  padding: auto;
+  display: flex;
+  flex-direction: column;
 }
-.calendar .sat {
-  color: #7ab6f3;
-  background-color: #e7f6fd;
+/* カレンダー全体のスタイル */
+.calendar-container {
+  max-width: 80vw;
+  margin: 0 auto;
 }
-.calendar .mute {
-  color: #aaa;
+
+.month-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: auto;
 }
-.calendar .today {
-  background-color: #7d7d7d;
+
+.day {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px; 
+  height: 100px;
+  width: 150px;
+  position: relative;
 }
-.calendar .off {
-  background-color: #fadcdb;
+
+.date {
+  font-weight: bold;
+  margin-bottom: 5px; 
+}
+
+.diary {
+  background-color: #e6f7ff; 
+  border-left: 5px solid #1890ff; 
+  margin-top: 5px; 
+  padding: 5px; 
+  border-radius: 3px;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+}
+
+/* フォームのスタイル */
+.container {
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dish-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-date-wrap {
+  margin-bottom: 10px;
+}
+
+.date-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+.calendar-title{
+  background-color: #1890ff;
+}
+.table.table-striped{
+  background-color: #1890ff;
 }

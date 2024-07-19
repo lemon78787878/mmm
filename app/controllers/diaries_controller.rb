@@ -4,6 +4,7 @@ class DiariesController < ApplicationController
 
   def index
     @diaries = Diary.all
+    @diary = Diary.new
   end
 
   def create
@@ -41,6 +42,6 @@ class DiariesController < ApplicationController
   end
 
   def diary_params
-    params.require(:diary).permit(:day, :dish).merge(user_id: current_user.id)
+    params.require(:diary).permit(:diary_day, :dish).merge(user_id: current_user.id)
   end
 end
