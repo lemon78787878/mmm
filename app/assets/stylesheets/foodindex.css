@@ -1,3 +1,70 @@
+.food-lists{
+  display: flex;
+}
+.foodlist{
+  display: flex;
+  margin: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.food-index{
+  display: flex;
+}
+/* 画像 */
+.food-img-content {
+  width: 100px;
+  padding: 5px;
+  border-radius:50%;
+  background: linear-gradient(to right bottom, #0099e8, #ade7f9);
+} 
+.food-img {
+  height: 100px;
+  border-radius:50%;
+  background-image: url("image.jpg");
+  background-position: 54% 36%;
+}
+
+/* 名前・個数・期限 */
+.food-info1{
+  display: flex;
+}
+
+/* 管理・削除ボタン */
+.food-btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #090909;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #ffffff solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  background: #fff;
+}
+.food-btn:hover{
+  color: #fff;
+  background: #87CEFA;
+}
+
+.food-destroy{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #090909;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #ffffff solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  background: #fff;
+}
+.food-destroy:hover{
+  color: #fff;
+  background: #87CEFA;
+}
+
+/* 在庫を追加するボタン */
 .food-new {
   width: 120px;
   background: #0099e8;
@@ -8,7 +75,6 @@
   position: fixed;
   padding: 15px;
 }
-
 .food-new-text {
   color: #fff;
   display: block;
@@ -16,7 +82,6 @@
   text-decoration: none;
   margin-bottom: 5px;
 }
-
 .food-new-icon {
   width: 60%;
 }

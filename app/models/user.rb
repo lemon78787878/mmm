@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validate :password_complexity
 
+  has_many :diaries
+
   private
   def password_complexity
     return if password.nil? || password.match?(/\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/)

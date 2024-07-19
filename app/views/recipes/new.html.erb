@@ -1,0 +1,9 @@
+<%= form_with model: @food, url: recipes_path, method: :post, data: { turbo: false } do |form| %>
+  <div>
+    <%= form.label :name, "食材を入力してください" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.submit "レシピを検索" %>
+  </div>
+<% end %>

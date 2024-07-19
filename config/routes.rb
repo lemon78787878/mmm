@@ -4,9 +4,9 @@ Rails.application.routes.draw do
     root to: 'devise/sessions#new'
     get 'user', to: 'users#show', as: :user_root
   end
-  resources :foods, only: [:index, :new, :create]
-
-  
+  resources :foods, only: [:index, :new, :create, :destroy, :edit, :update]
+  resources :recipes, only: [:new, :create, :show]
+  resources :diaries, only: [:index, :create, :show, :edit, :update, :destroy]
 
 
 end
