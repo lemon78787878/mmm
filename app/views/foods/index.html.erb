@@ -9,9 +9,10 @@
         <%# 在庫の一覧詳細が表示される %>
         <% if @foods.present? %>
           <% @foods_by_category.each do |category, foods| %>
-            <h2><%= category.name %></h2>
-            <ul>
+            <h2 class='foodlistcategory'><%= category.name %></h2>
+            <ul class='food'>
               <% foods.each do |food| %>
+              
                 <li class='foodlist'>
                   <%= link_to edit_food_path(food.id) do %>
                     <div class='food-index'>
@@ -20,11 +21,11 @@
                       </div>
                       <div class='food-info'>
                         <div class='food-info1'>
-                          <div class='item-info'>
+                          <div class='food-info2'>
                             <%= food.food_name %>
                           </div>
-                          <div class='item-info'>
-                            <%= food.stock %><%= food.quantity.name %>
+                          <div class='food-info3'>
+                            <%= food.stock%><%= food.quantity.name %>
                           </div>
                         </div>
                         <div class='item-info'>
@@ -33,12 +34,14 @@
                       </div>
                     </div>
                   <% end %>
-                  <div>
+                  <div class='foodlist'>
                     <div>
-                      <%= link_to '管理', edit_food_path(food.id), method: :get, class: "food-btn" %>
-                    </div>
-                    <div>
-                      <%= link_to '削除', food_path(food.id), data: { turbo_method: :delete }, class:'food-destroy' %>
+                      <div>
+                        <%= link_to '管理', edit_food_path(food.id), method: :get, class: "food-btn" %>
+                      </div>
+                      <div>
+                        <%= link_to '削除', food_path(food.id), data: { turbo_method: :delete }, class:'food-destroy' %>
+                      </div>
                     </div>
                   </div>
                 </li>
@@ -64,7 +67,7 @@
       </div>
     <% end %>
 
-    <div class="sell-btn-contents">
+    <div class="purchase-btn">
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%= link_to(root_path, class: 'purchase-btn') do %>

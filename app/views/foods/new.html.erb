@@ -4,7 +4,7 @@
     <%= form_with model: @food, local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
       <%# 食材画像 %>
@@ -74,7 +74,7 @@
       <%# 下部ボタン %>
       <div class="sell-btn-contents">
         <%= f.submit "登録する" ,class:"sell-btn" %>
-        <%=link_to 'もどる', foods_path, class:"back-btn" %>
+        <%=link_to 'もどる', foods_path, class:"sell-btn" %>
       </div>
       <%# /下部ボタン %>
     <% end %>
