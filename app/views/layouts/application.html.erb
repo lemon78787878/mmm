@@ -35,6 +35,7 @@
       </div>
     </header>
     <%= yield %>
+    <%= javascript_include_tag "foods", 'data-turbo-track': 'reload' %>
     <footer class="footer">
       <p class="copyright">MMM (meal management)</p>
     </footer>
