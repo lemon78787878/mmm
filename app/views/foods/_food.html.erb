@@ -1,10 +1,11 @@
-<h1>在庫編集ページ</h1>
 <li class='foodlist'>
   <!-- 通常表示部分 -->
   <div id="food-view-<%= food.id %>" class='food-index'>
+    <!-- フードの画像 -->
     <div class='food-img-content'>
       <%= image_tag food.image, class: "food-img" %>
     </div>
+    <!-- フードの情報 -->
     <div class='food-info'>
       <div class='food-info1'>
         <div class='food-info2'>
@@ -18,30 +19,41 @@
         消費期限：<%= food.deadline %>
       </div>
     </div>
+    <!-- 編集ボタン -->
     <div>
-      <%= link_to '管理', edit_food_path(food.id), class: "food-btn", data: { food_id: food.id } %>
-      <%= link_to '削除', food_path(food.id), data: { turbo_method: :delete }, class:'food-destroy' %>
+      <div>
+      <%= link_to '管理', '#', class: "food-edit-btn", data: { food_id: food.id } %>
+      </div>
+      <!-- 削除ボタン -->
+      <div>
+      <%= link_to '削除', food_path(food.id), data: { turbo_method: :delete }, class: 'food-destroy' %>
+      </div>
     </div>
   </div>
 
-  <!-- 編集フォーム部分 -->
+  <!-- 編集フォーム部分（デフォルトでは非表示） -->
   <div id="food-edit-<%= food.id %>" class='food-edit' style="display: none;">
     <%= form_with(model: food, local: true) do |form| %>
+      <!-- フード名の編集フィールド -->
       <div class='field'>
         <%= form.label :food_name %>
         <%= form.text_field :food_name %>
       </div>
+      <!-- 在庫の編集フィールド -->
       <div class='field'>
         <%= form.label :stock %>
         <%= form.number_field :stock %>
       </div>
+      <!-- 消費期限の編集フィールド -->
       <div class='field'>
         <%= form.label :deadline %>
         <%= form.date_field :deadline %>
       </div>
+      <!-- 更新ボタン -->
       <div>
-        <%= form.submit '変更', class: 'food-change' %>
-        <%= link_to 'キャンセル', '#', class: 'food-cancel', data: { food_id: food.id } %>
+        <%= form.submit '更新', class: 'food-btn' %>
+        <!-- キャンセルボタン -->
+        <%= link_to 'キャンセル', '#', class: 'food-btn', data: { food_id: food.id } %>
       </div>
     <% end %>
   </div>

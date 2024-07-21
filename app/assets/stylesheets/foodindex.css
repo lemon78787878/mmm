@@ -1,15 +1,27 @@
+.food-list{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .foodlistcategory{
   background-color: #f5eec4;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
 }
-.food-lists{
+.food{
+  display: flex;
+  flex-wrap: wrap;
+  width: 110%;
 }
 .foodlist{
   display: flex;
   margin: 5px;
-  flex-wrap: wrap;
   justify-content: space-around;
   background-color: rgb(143, 215, 243);
-  align-items: ;
+  align-items: center;
+  width: 400px;
+  
 }
 .food-index{
   display: flex;
@@ -126,4 +138,25 @@
 }
 .sell-btn{
   border: 1px solid #aaa;
+}
+
+.food-edit-btn,
+.food-cancel-btn {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #090909;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #ffffff solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  background: #fff;
+  margin: 5px;
+}
+
+.food-edit-btn:hover,
+.food-cancel-btn:hover {
+  color: #fff;
+  background: #87CEFA;
 }

@@ -1,52 +1,19 @@
 <div class='foods-sell-contents'>
   <div class="foods-sell-main">
-
     <%# 在庫一覧 %>
     <div class='foods-contents'>
       <h2 class='greeting'>在庫一覧</h2>
       <ul class='food-lists'>
-
-        <%# 在庫の一覧詳細が表示される %>
         <% if @foods.present? %>
           <% @foods_by_category.each do |category, foods| %>
-            <h2 class='foodlistcategory'><%= category.name %></h2>
-            <ul class='food'>
-              <% foods.each do |food| %>
-              
-                <li class='foodlist'>
-                  <%= link_to edit_food_path(food.id) do %>
-                    <div class='food-index'>
-                      <div class='food-img-content'>
-                        <%= image_tag food.image, class: "food-img" %>
-                      </div>
-                      <div class='food-info'>
-                        <div class='food-info1'>
-                          <div class='food-info2'>
-                            <%= food.food_name %>
-                          </div>
-                          <div class='food-info3'>
-                            <%= food.stock%><%= food.quantity.name %>
-                          </div>
-                        </div>
-                        <div class='item-info'>
-                          消費期限：<%= food.deadline %>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
-                  <div class='foodlist'>
-                    <div>
-                      <div>
-                        <%= link_to '管理', edit_food_path(food.id), method: :get, class: "food-btn" %>
-                      </div>
-                      <div>
-                        <%= link_to '削除', food_path(food.id), data: { turbo_method: :delete }, class:'food-destroy' %>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
+            <div class='food-list'>
+              <h2 class='foodlistcategory'><%= category.name %></h2>
+              <ul class='food'>
+                <% foods.each do |food| %>
+                  <%= render partial: 'food', locals: { food: food } %>
+                <% end %>
+              </ul>
+            <div>
           <% end %>
         <% else %>
           <%= link_to new_food_path do %>
@@ -63,16 +30,15 @@
     <%= link_to new_food_path do %>
       <div class='food-new'>
         <span class='food-new-text'>在庫を追加する</span>
-        <%= image_tag 'kaden_reizouko.png' , size: '185x50' ,class: "food-new-icon" %>
+        <%= image_tag 'kaden_reizouko.png', size: '185x50', class: "food-new-icon" %>
       </div>
     <% end %>
 
     <div class="purchase-btn">
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= link_to 'もどる', root_path, class: "back-btn" %>
     </div>
     <%= link_to(root_path, class: 'purchase-btn') do %>
-      <%= image_tag 'logo.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+      <%= image_tag 'logo.png', size: '185x50', class: "purchase-btn-icon" %>
     <% end %>
   </div>
 </div>
-

@@ -152,7 +152,7 @@ a {
   width: 100vw;
   text-align: center;
   border-radius: 4%;
-  bottom: 1px;
+  bottom: 0px;
   position: fixed;
 }
 .copyright {
