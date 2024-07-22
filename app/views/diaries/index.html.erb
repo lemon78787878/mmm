@@ -4,15 +4,17 @@
 
     <div class="calendar-container">
       <%= custom_month_calendar do |date| %>
-        <div class="day">
-          <%= content_tag :div, date.day, class: 'date' %>
-          <% diaries = current_user.diaries.where(diary_day: date) %>
-          <% diaries.each do |diary| %>
-            <div class="diary">
-              <p><%= diary.dish %></p>
-            </div>
-          <% end %>
-        </div>
+        <%= link_to diaries_by_date_path(date: date) do %>
+          <div class="day" data-date="<%= date %>">
+            <%= content_tag :div, date.day, class: 'date' %>
+            <% diaries = current_user.diaries.where(diary_day: date) %>
+            <% diaries.each do |diary| %>
+              <div class="diary">
+                <p><%= diary.dish %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
 

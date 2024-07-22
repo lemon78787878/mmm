@@ -8,16 +8,16 @@
   margin-bottom: 50px;
 }
 
-.diaries-sell-main {
+.diaries-show-main {
   background-color: #FFF;
   width: 80vw;
   min-width: 450px;
   padding: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-/* カレンダー全体のスタイル */
 .calendar-container {
   max-width: 80vw;
   margin: 0 auto;
@@ -35,7 +35,7 @@
 .day {
   background-color: #fff;
   border: 1px solid #ccc;
-  padding: 5px; 
+  padding: 5px;
   height: 100px;
   width: 150px;
   position: relative;
@@ -43,22 +43,23 @@
 
 .date {
   font-weight: bold;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
-.diary {
-  background-color: #e6f7ff; 
-  border-left: 5px solid #a3f9dc; 
-  margin: 1px auto;
-  padding: 5px; 
+.diary_show {
+  background-color: #e6f7ff;
+  border-left: 5px solid #a3f9dc;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  padding: 2px 5px;
   border-radius: 3px;
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 0.8em;
+  width: 70%;
 }
 
-/* フォームのスタイル */
 .container {
   margin-top: 20px;
   max-width: 600px;
@@ -85,6 +86,19 @@
   border-radius: 5px;
 }
 
+.diary_edit {
+  background-color: #e6f7ff;
+  margin: 5px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8em;
+  width: 400px;
+}
+
+
 .submit-button {
   padding: 10px 20px;
   border: none;
@@ -98,10 +112,17 @@
   background-color: #a9fabc;
 }
 
-.calendar-title {
-  background-color: #0099e8;
+.back-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 20px;
 }
 
-.table.table-striped {
-  background-color: #0099e8;
+.back-button:hover {
+  background-color: #0056b3;
 }

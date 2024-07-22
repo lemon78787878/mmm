@@ -12,18 +12,36 @@ class DiariesController < ApplicationController
     if @diary.save
       redirect_to diaries_path
     else
-      render :new
+      @diaries = Diary.all
+      render :index
     end
   end
 
-  def show
+  def date
+    @date = params[:date]
+    @diaries = current_user.diaries.where(diary_day: @date)
   end
+
+  def edit_by_date
+    @date = params[:date]
+    @diaries = current_user.diaries.where(diary_day: @date)
+  end
+
+  def update_by_date
+    @date = params[:date]
+    @diaries = current_user.diaries.where(diary_day: @date)
+    @diaries.each do |diary|
+      diary.update(diary_params)
+    end
+    redirect_to diaries_by_date_path(date: @date), notice: 'Diaries were successfully updated.'
+  end
+
   def edit
   end
 
   def update
     if @diary.update(diary_params)
-      redirect_to diaries_path, notice: 'Diary was successfully updated.'
+      redirect_to diaries_path
     else
       render :edit
     end
@@ -31,7 +49,7 @@ class DiariesController < ApplicationController
 
   def destroy
     @diary.destroy
-    redirect_to diaries_path, notice: 'Diary was successfully destroyed.'
+    redirect_to diaries_path
   end
 
 

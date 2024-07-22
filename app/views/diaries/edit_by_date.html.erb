@@ -1,0 +1,23 @@
+<div class="diaries-sell-contents">
+  <div class='diaries-show-main'>
+    <h1 class='greeting'><%= @date %>の料理記録編集</h1>
+
+    <%= form_with url: update_diaries_by_date_path(date: @date), method: :patch, local: true do |f| %>
+      <% @diaries.each do |diary| %>
+        <div class="diary_edit">
+          <div>
+            <%= f.label :dish, "料理名", for: "diary_dish_#{diary.id}" %>
+            <%= f.text_area :dish, value: diary.dish, id: "diary_dish_#{diary.id}", name: "diaries[#{diary.id}][dish]" %>
+          </div>
+          <div>
+            <%= f.label :diary_day, "日付", for: "diary_day_#{diary.id}" %>
+            <%= f.date_select :diary_day, default: diary.diary_day, id: "diary_day_#{diary.id}", name: "diaries[#{diary.id}][diary_day]" %>
+          </div>
+        </div>
+      <% end %>
+      <%= f.submit "更新する", class: "submit-button" %>
+    <% end %>
+
+    <%= link_to '戻る', diaries_path, class: 'back-button' %>
+  </div>
+</div>
