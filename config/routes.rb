@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   resources :foods, only: [:index, :new, :create, :destroy, :edit, :update]
   resources :recipes, only: [:new, :create, :show]
-  resources :diaries, only: [:index, :create, :show, :edit, :update, :destroy]
+  resources :diaries, except: :show
   get 'diaries/date/:date', to: 'diaries#date', as: 'diaries_by_date'
   get 'diaries/edit/:date', to: 'diaries#edit_by_date', as: 'edit_diaries_by_date'
   patch 'diaries/update_by_date/:date', to: 'diaries#update_by_date', as: 'update_diaries_by_date'

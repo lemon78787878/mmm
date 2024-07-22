@@ -9,7 +9,7 @@
         </div>
         <div class="buttons">
           <%= link_to '編集', edit_diary_path(diary.id), class: 'edit-button' %>
-          <%= link_to '削除', diary_path(diary.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'delete-button' %>
+          <%= link_to '削除', diary_path(diary.id), data: { turbo_method: :delete }, class: 'delete-button' %>
         </div>
       <% end %>
     <% else %>
