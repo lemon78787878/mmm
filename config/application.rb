@@ -13,6 +13,8 @@ module Mmm
     config.load_defaults 7.0
     config.active_storage.variant_processor = :mini_magick
     config.autoload_paths << Rails.root.join('lib')
+    config.i18n.available_locales = [:en, :ja]
+    config.i18n.default_locale = :ja
 
     # Configuration for the application, engines, and railties goes here.
     #

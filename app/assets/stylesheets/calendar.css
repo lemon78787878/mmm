@@ -1,57 +1,140 @@
-.calendar-wrap {
-  margin: 0 auto;
-  max-width: 1110px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-@media (max-width: 767.98px) {
-  .calendar-wrap {
-    display: flex;
-    flex-direction: column;
-  }
-}
-.calendar {
+.diaries-sell-contents {
   width: 100%;
-  border-collapse: collapse;
-}
-.calendar th,
-.calendar td {
-  border: 1px solid #000;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: bold;
-}
-.calendar th {
-  padding: 6px 10px;
-}
-.calendar td {}
-@media (max-width: 767.98px) {
-  .calendar th,
-  .calendar td {
-    padding: 6px;
-    font-size: 12px;
-  }
-  .calendar th {
-    padding: 3px 6px;
-  }
+  min-width: 800px;
+  height: 100%;
+  background-color: rgb(251, 242, 232);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
-.calendar .sun {
-  color: #e17f7e;
-  background-color: #f8e4e2;
+.diaries-sell-main {
+  background-color: #FFF;
+  width: 80vw;
+  min-width: 450px;
+  padding: auto;
+  display: flex;
+  flex-direction: column;
 }
-.calendar .sat {
-  color: #7ab6f3;
-  background-color: #e7f6fd;
+
+/* カレンダー全体のスタイル */
+.simple-calendar {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
 }
-.calendar .mute {
-  color: #aaa;
+
+.calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
 }
-.calendar .today {
-  background-color: #7d7d7d;
+
+.calendar-heading .calendar-title {
+  font-weight: bold; 
+  font-size: 1.5em;
+  background-color: #b6e1f7;
 }
-.calendar .off {
-  background-color: #fadcdb;
+
+.calendar-heading nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.calendar-heading nav a {
+  margin: 0 0.5em;
+}
+
+.table.table-striped {
+  width: 100%;
+  min-width: 50%; 
+  table-layout: fixed;
+}
+
+.table.table-striped th,
+.table.table-striped td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.table.table-striped th {
+  background-color: #f8f9fa;
+  height: auto; 
+}
+
+.table.table-striped td {
+  background-color: #ffffff;
+  height: 100px; 
+  width: 150px;
+  vertical-align: top;
+}
+
+.date {
+  font-weight: bold;
+  margin-bottom: 5px; 
+  background-color: #b6e1f7;
+  display: block;
+}
+
+.diary {
+  background-color: #e6f7ff; 
+  border-left: 5px solid #a3f9dc; 
+  margin: 1px auto;
+  padding: 5px; 
+  border-radius: 3px;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  font-size: 0.8em;
+}
+
+/* フォームのスタイル */
+.container {
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dish-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-date-wrap {
+  margin-bottom: 10px;
+}
+
+.date-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #a9fabc;
+}
+
+.calendar-title {
+  background-color: #0099e8;
+}
+
+.table.table-striped {
+  background-color: #0099e8;
 }

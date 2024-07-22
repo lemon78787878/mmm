@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
 
   def index
     @foods = Food.all
-    @foods_by_category = @foods.group_by { |food| food.category }
+    @foods_by_category = Food.all.group_by { |food| food.category }.sort_by { |category, foods| category.id }
   end
 
   def new
@@ -26,6 +26,7 @@ class FoodsController < ApplicationController
   end
 
   def edit
+    @food = Food.find(params[:id])
   end
 
   def update

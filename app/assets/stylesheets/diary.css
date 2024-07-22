@@ -1,0 +1,128 @@
+.diaries-sell-contents {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: rgb(251, 242, 232);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.diaries-show-main {
+  background-color: #FFF;
+  width: 80vw;
+  min-width: 450px;
+  padding: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-container {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.month-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: auto;
+}
+
+.day {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  height: 100px;
+  width: 150px;
+  position: relative;
+}
+
+.date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.diary_show {
+  background-color: #e6f7ff;
+  border-left: 5px solid #a3f9dc;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8em;
+  width: 70%;
+}
+
+.container {
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dish-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-date-wrap {
+  margin-bottom: 10px;
+}
+
+.date-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.diary_edit {
+  background-color: #e6f7ff;
+  margin: 5px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8em;
+  width: 400px;
+}
+
+
+.submit-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #a9fabc;
+}
+
+.back-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}

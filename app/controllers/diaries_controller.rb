@@ -4,6 +4,7 @@ class DiariesController < ApplicationController
 
   def index
     @diaries = Diary.all
+    @diary = Diary.new
   end
 
   def create
@@ -11,13 +12,18 @@ class DiariesController < ApplicationController
     if @diary.save
       redirect_to diaries_path
     else
-      render :new
+      @diaries = Diary.all
+      render :index
     end
   end
 
-  def show
+  def date
+    @date = params[:date]
+    @diaries = current_user.diaries.where(diary_day: @date)
   end
+
   def edit
+    @date = @diary.diary_day
   end
 
   def update
@@ -30,7 +36,7 @@ class DiariesController < ApplicationController
 
   def destroy
     @diary.destroy
-    redirect_to diaries_path, notice: 'Diary was successfully destroyed.'
+    redirect_to diaries_path
   end
 
 
@@ -41,6 +47,7 @@ class DiariesController < ApplicationController
   end
 
   def diary_params
-    params.require(:diary).permit(:day, :dish).merge(user_id: current_user.id)
+    params.require(:diary).permit(:diary_day, :dish).merge(user_id: current_user.id)
   end
+
 end

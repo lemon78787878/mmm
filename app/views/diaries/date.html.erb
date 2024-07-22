@@ -1,0 +1,21 @@
+<div class="diaries-sell-contents">
+  <div class='diaries-show-main'>
+    <h1 class='greeting'><%= @date %>の料理記録</h1>
+
+    <% if @diaries.present? %>
+      <% @diaries.each do |diary| %>
+        <div class="diary_show">
+          <p><%= diary.dish %></p>
+        </div>
+        <div class="buttons">
+          <%= link_to '編集', edit_diary_path(diary.id), class: 'edit-button' %>
+          <%= link_to '削除', diary_path(diary.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'delete-button' %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>この日に記録された料理はありません。</p>
+    <% end %>
+
+    <%= link_to '戻る', diaries_path, class: 'back-button' %>
+  </div>
+</div>
