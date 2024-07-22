@@ -4,6 +4,10 @@
 
     <%= form_with model: @diary, local: true do |f| %>
       <div class="diary">
+        <div class="item-img-content">
+          <%= f.label :image %>
+          <%= f.file_field :image , class:"items-text"%>
+        </div>
         <div>
           料理名
           <%= f.text_area :dish, class:"items-text", id:"item-name" %>

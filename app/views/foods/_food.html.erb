@@ -36,6 +36,14 @@
     <%= form_with(model: food, local: true) do |form| %>
       <!-- フード名の編集フィールド -->
       <div class='field'>
+        <%= form.label :image %>
+        <%= form.file_field :image %>
+      </div>
+      <div class='field'>
+        <%= form.label :category_id %>
+        <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+      <div class='field'>
         <%= form.label :food_name %>
         <%= form.text_field :food_name %>
       </div>
@@ -43,6 +51,10 @@
       <div class='field'>
         <%= form.label :stock %>
         <%= form.number_field :stock %>
+      </div>
+      <div class='field'>
+        <%= form.label :quantity_id %>
+        <%= form.collection_select(:quantity_id, Quantity.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       </div>
       <!-- 消費期限の編集フィールド -->
       <div class='field'>

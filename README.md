@@ -39,7 +39,7 @@ https://mmm-m1nz.onrender.com
 1. トップページの「料理記録」からカレンダーへ遷移
 2. 1か月分のカレンダーに作成した料理を登録できる。
 3. 日付を押すとその日の料理記録が確認できる。
-### 在庫編集
+### 料理記録編集
 1. 日付を押すとその日の料理記録が確認でき、「編集」・「削除」ボタンがある。
 2. 料理記録の料理名・日付の編集ができる。
 3. 「削除」ボタンがあり削除できる。
@@ -50,14 +50,15 @@ https://mmm-m1nz.onrender.com
 # 実装した機能についての画像やGIFおよびその説明※
 
 # 実装予定の機能
-- 在庫管理
 - レシピ検索
-- 料理記録
+- 編集・削除前に警告文を発するようにする。
+- 料理記録に作成した料理の写真が載せられるようにする
+
 
 # テーブル設計
-[![Image from Gyazo](https://i.gyazo.com/94eba4623f035e39e45636b1cfe67a7f.png)](https://gyazo.com/94eba4623f035e39e45636b1cfe67a7f)
+[![Image from Gyazo](https://i.gyazo.com/02a8a2419720017ab3d6a962d6ded648.png)](https://gyazo.com/02a8a2419720017ab3d6a962d6ded648)
 
-## users テーブル（実装済）
+## users テーブル
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | nickname           | string | null: false |
@@ -66,7 +67,6 @@ https://mmm-m1nz.onrender.com
 
 ### Association
 - has_many :diaries
-- has_many :foods
 
 
 ## foods テーブル（実装済）
@@ -81,11 +81,11 @@ https://mmm-m1nz.onrender.com
 
 ### Association
 - belongs_to :user
-- has_many :recipe_foods
 - has_one_attached :image
-- has_many :recipes, through: :recipe_foods
+- has_many :recipe_foods（追加予定）
+- has_many :recipes, through: :recipe_foods（追加予定）
 
-## recipes テーブル（未実装）
+## recipes テーブル（追加予定）
 | Column             | Type    | Options     |
 | ------------------ | --------| ----------- |
 | dish               | string  | null: false |
@@ -95,18 +95,17 @@ https://mmm-m1nz.onrender.com
 - has_many :foods, through: :recipe_foods
 - has_many :diaries
 
-## diaries テーブル（未実装）
+## diaries テーブル
 | Column             | Type    | Options     |
 | ------------------ | --------| ----------- |
-| day                | date    | null: false |
+| diary_day          | date    | null: false |
 | dish               | string  | null: false |
-| recipe             | references  | null: false, foreign_key: true|
+| recipe（追加予定）  | references  | null: false, foreign_key: true|
 | user               | references  | null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :diary
 
-## recipe_foods テーブル（未実装）
+## recipe_foods テーブル（追加予定）
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
 | recipe             | references | null: false, foreign_key: true |
@@ -116,7 +115,7 @@ https://mmm-m1nz.onrender.com
 - belongs_to :food
 
 # 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/76bbbb53ee6ce82ae4fad3713e99e5f0.png)](https://gyazo.com/76bbbb53ee6ce82ae4fad3713e99e5f0)
+[![Image from Gyazo](https://i.gyazo.com/205b77e2dd8c844c952487530fa2a827.png)](https://gyazo.com/205b77e2dd8c844c952487530fa2a827)
 
 # 開発環境
 - フロントエンド
@@ -134,5 +133,14 @@ https://mmm-m1nz.onrender.com
 % yam install
 
 # 工夫したポイント
+- 在庫管理時にカテゴリーごとに保存がされるようにすること。
+- 写真を使用した表示法補だけでなく、一目でなんの機能があり、どのような動作がするのかをわかるようにしたCSS
+- Javascriptを使用して、非同期通信で出来る処理は非同期通信処理を行い、ページ遷移を極力少なくした。
+
 # 改善点
+- もう少し見やすくHTML・CSSを設定することができた
+- AIの実装には時間がかかりそう。キャッシュの問題かもしれない。
+
+
 # 制作時間
+- 1週間程度

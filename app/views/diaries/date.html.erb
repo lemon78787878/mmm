@@ -4,6 +4,9 @@
 
     <% if @diaries.present? %>
       <% @diaries.each do |diary| %>
+        <div class="item-img-content">
+          <%= image_tag diary.image ,class:"item-box-img" %>
+        </div>
         <div class="diary_show">
           <p><%= diary.dish %></p>
         </div>

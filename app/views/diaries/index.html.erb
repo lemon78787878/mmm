@@ -18,6 +18,7 @@
 
     <div class="container">
       <%= form_with model: @diary, local: true do |f| %>
+        <%= f.file_field :image, id:"item-image" %>
         <%= f.text_area :dish, placeholder: "夕食 : 〇〇（料理名）", class: "dish-input" %>
         <div class="input-date-wrap">
           <%= f.date_select :diary_day, use_month_numbers: true, prompt: { year: '年', month: '月', day: '日' }, start_year: 2022, end_year: Time.now.year + 10, class: "date-select" %>
