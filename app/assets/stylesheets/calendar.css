@@ -18,32 +18,65 @@
 }
 
 /* カレンダー全体のスタイル */
-.calendar-container {
-  max-width: 80vw;
-  margin: 0 auto;
+.simple-calendar {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
-.month-calendar {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 1px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  padding: auto;
+.calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
 }
 
-.day {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 5px; 
-  height: 100px;
+.calendar-heading .calendar-title {
+  font-weight: bold; 
+  font-size: 1.5em;
+  background-color: #b6e1f7;
+}
+
+.calendar-heading nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.calendar-heading nav a {
+  margin: 0 0.5em;
+}
+
+.table.table-striped {
+  width: 100%;
+  min-width: 50%; 
+  table-layout: fixed;
+}
+
+.table.table-striped th,
+.table.table-striped td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.table.table-striped th {
+  background-color: #f8f9fa;
+  height: auto; 
+}
+
+.table.table-striped td {
+  background-color: #ffffff;
+  height: 100px; 
   width: 150px;
-  position: relative;
+  vertical-align: top;
 }
 
 .date {
   font-weight: bold;
   margin-bottom: 5px; 
+  background-color: #b6e1f7;
+  display: block;
 }
 
 .diary {

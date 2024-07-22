@@ -5,15 +5,13 @@
     <div class="calendar-container">
       <%= custom_month_calendar do |date| %>
         <%= link_to diaries_by_date_path(date: date) do %>
-          <div class="day" data-date="<%= date %>">
-            <%= content_tag :div, date.day, class: 'date' %>
-            <% diaries = current_user.diaries.where(diary_day: date) %>
-            <% diaries.each do |diary| %>
-              <div class="diary">
-                <p><%= diary.dish %></p>
-              </div>
-            <% end %>
-          </div>
+          <%= content_tag :div, date.day, class: 'date' %>
+          <% diaries = current_user.diaries.where(diary_day: date) %>
+          <% diaries.each do |diary| %>
+            <div class="diary">
+              <p><%= diary.dish %></p>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
@@ -26,6 +24,6 @@
         </div>
         <%= f.submit "記録する", class: "submit-button" %>
       <% end %>
+      <%=link_to 'もどる', foods_path, class:"sell-btn" %>
     </div>
-  </div>
 </div>

@@ -22,26 +22,13 @@ class DiariesController < ApplicationController
     @diaries = current_user.diaries.where(diary_day: @date)
   end
 
-  def edit_by_date
-    @date = params[:date]
-    @diaries = current_user.diaries.where(diary_day: @date)
-  end
-
-  def update_by_date
-    @date = params[:date]
-    @diaries = current_user.diaries.where(diary_day: @date)
-    @diaries.each do |diary|
-      diary.update(diary_params)
-    end
-    redirect_to diaries_by_date_path(date: @date), notice: 'Diaries were successfully updated.'
-  end
-
   def edit
+    @date = @diary.diary_day
   end
 
   def update
     if @diary.update(diary_params)
-      redirect_to diaries_path
+      redirect_to diaries_path, notice: 'Diary was successfully updated.'
     else
       render :edit
     end
@@ -62,4 +49,5 @@ class DiariesController < ApplicationController
   def diary_params
     params.require(:diary).permit(:diary_day, :dish).merge(user_id: current_user.id)
   end
+
 end

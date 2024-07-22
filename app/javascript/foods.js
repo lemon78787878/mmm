@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initializeFoodEditButtons() {
   // "編集"ボタンをクリックしたときの処理
   document.querySelectorAll('.food-edit-btn').forEach(button => {
     button.addEventListener('click', event => {
@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById(`food-edit-${foodId}`).style.display = 'none';
     });
   });
-});
+}
 
-window.addEventListener("turbo:load", pay);
-window.addEventListener("turbo:render", pay);
+// 初期化関数をDOMContentLoadedおよびturbo:loadイベントに追加
+document.addEventListener('DOMContentLoaded', initializeFoodEditButtons);
+document.addEventListener('turbo:load', initializeFoodEditButtons);
