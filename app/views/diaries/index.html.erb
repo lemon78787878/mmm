@@ -4,7 +4,7 @@
 
     <div class="calendar-container">
       <%= custom_month_calendar do |date| %>
-        <%= link_to diaries_by_date_path(date: date) do %>
+        <%= link_to by_date_diaries_path(date: date) do %>
           <%= content_tag :div, date.day, class: 'date' %>
           <% diaries = current_user.diaries.where(diary_day: date) %>
           <% diaries.each do |diary| %>
