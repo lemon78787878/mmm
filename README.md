@@ -17,14 +17,17 @@ https://mmm-m1nz.onrender.com
 ## ユーザ管理
 1. アプリを開くとログイン画面になる。「ログイン」「新規登録」への遷移ボタンがある。
 2. ログイン後トップページへ遷移する。
+[![Image from Gyazo](https://i.gyazo.com/ec11b6fa8fa9434cd9c3acbbe18ca311.gif)](https://gyazo.com/ec11b6fa8fa9434cd9c3acbbe18ca311)
 
 ## 在庫管理
 1. トップページの「食材」から「在庫一覧」へ遷移
 2. 在庫がカテゴリごとに表示され、画面下部に「追加する」がある。
+[![Image from Gyazo](https://i.gyazo.com/d7a5f50b4c244f07879205c4cc464a6b.gif)](https://gyazo.com/d7a5f50b4c244f07879205c4cc464a6b)
 ### 在庫追加
 1. 「追加する」から新しく食材を登録する画面へ遷移
 2. カテゴリ・食材名・数量・単位・賞味期限を入力し登録できる
 3. 「在庫一覧」に追加される。
+[![Image from Gyazo](https://i.gyazo.com/2b5d484f0ee5aa4fe1d7b583473f9667.gif)](https://gyazo.com/2b5d484f0ee5aa4fe1d7b583473f9667)
 ### 在庫編集
 1. 「在庫一覧」にある在庫をクリックすると編集画面に遷移する。
 2. 在庫の数量・単位・賞味期限の編集ができる。
@@ -69,7 +72,7 @@ https://mmm-m1nz.onrender.com
 - has_many :diaries
 
 
-## foods テーブル（実装済）
+## foods テーブル
 | Column             | Type    | Options     |
 | ------------------ | --------| ----------- |
 | category_id        | integer | null: false |
@@ -127,14 +130,14 @@ https://mmm-m1nz.onrender.com
 
 # ローカルでの動作方法
 以下のコマンドを順に実行
-% git clone https://github.com/lemon78787878/mmm.git
-% cd mmm
-% bundle install
-% yam install
+- % git clone https://github.com/lemon78787878/mmm.git
+- % cd mmm
+- % bundle install
+- % yam install
 
 # 工夫したポイント
 - 在庫管理時にカテゴリーごとに保存がされるようにすること。
-- 写真を使用した表示法補だけでなく、一目でなんの機能があり、どのような動作がするのかをわかるようにしたCSS
+- 写真を使用した表示方法や色遣いに気を付けてHTML・CSSを装飾したこと。
 - Javascriptを使用して、非同期通信で出来る処理は非同期通信処理を行い、ページ遷移を極力少なくした。
 
 # 改善点
