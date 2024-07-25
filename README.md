@@ -32,6 +32,8 @@ https://mmm-m1nz.onrender.com
 1. 「在庫一覧」にある在庫をクリックすると編集画面に遷移する。
 2. 在庫の数量・単位・賞味期限の編集ができる。
 3. 「削除」ボタンがあり削除できる。
+[![Image from Gyazo](https://i.gyazo.com/1e57ebd6abab362935d9c9186333df4f.gif)](https://gyazo.com/1e57ebd6abab362935d9c9186333df4f)
+
 
 ## レシピ検索（未実装）
 1. トップページの「レシピ」から「レシピ検索」へ遷移
@@ -42,10 +44,13 @@ https://mmm-m1nz.onrender.com
 1. トップページの「料理記録」からカレンダーへ遷移
 2. 1か月分のカレンダーに作成した料理を登録できる。
 3. 日付を押すとその日の料理記録が確認できる。
+[![Image from Gyazo](https://i.gyazo.com/a55b31a34a5ecbd4ea5544acbf17e7be.gif)](https://gyazo.com/a55b31a34a5ecbd4ea5544acbf17e7be)
+[![Image from Gyazo](https://i.gyazo.com/4e7b3468b4d4fd27d88ace6651d7b97d.gif)](https://gyazo.com/4e7b3468b4d4fd27d88ace6651d7b97d)
 ### 料理記録編集
 1. 日付を押すとその日の料理記録が確認でき、「編集」・「削除」ボタンがある。
 2. 料理記録の料理名・日付の編集ができる。
 3. 「削除」ボタンがあり削除できる。
+[![Image from Gyazo](https://i.gyazo.com/62c4b3545ac7a5e5285a9dbd97f7aded.gif)](https://gyazo.com/62c4b3545ac7a5e5285a9dbd97f7aded)
 
 # アプリケーションを作成した背景
 毎日の献立・買い物を考えている時間を短くしたい。
