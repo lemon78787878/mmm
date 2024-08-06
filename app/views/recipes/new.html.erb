@@ -1,9 +1,12 @@
-<%= form_with model: @food, url: recipes_path, method: :post, data: { turbo: false } do |form| %>
+<h1>レシピを生成する</h1>
+
+<%= form_with url: recipes_path, method: :post do %>
   <div>
-    <%= form.label :name, "食材を入力してください" %>
-    <%= form.text_field :name %>
+    <label for="ingredients">食材を入力してください (カンマ区切り):</label>
+    <%= text_field_tag :ingredients, '', placeholder: '例: トマト, チーズ, バジル' %>
   </div>
+
   <div>
-    <%= form.submit "レシピを検索" %>
+    <%= submit_tag 'レシピを生成する' %>
   </div>
 <% end %>
