@@ -1,3 +1,5 @@
 require 'openai'
 
-OpenAI::Client.new(api_key: ENV['OPENAI_API_KEY'])
+OpenAI.configure do |config|
+  config.access_token = ENV['OPENAI_API_KEY']
+end

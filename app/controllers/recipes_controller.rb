@@ -1,27 +1,24 @@
 class RecipesController < ApplicationController
+  def index
+    @recipes = Recipe.all
+  end
+
   def new
     @food = Food.new
   end
 
   def create
-    client = OpenAI::Client.new(api_key: ENV['OPENAI_API_KEY'])
+    @recipe = Recipe.new(content: Recipe.generate_recipe(params[:ingredients]))
 
-    prompt = "以下の食材を使用したレシピを教えてください: #{params[:food][:food_name]}"
-    begin
-      response = client.completions(
-        engine: "gpt-3.5-turbo",  # または "text-davinci-003" などの他のモデル
-        prompt: prompt,
-        max_tokens: 150
-      )
-      @recipe = response.dig("choices", 0, "text")
-    rescue OpenAI::Client::Error => e
-      @error = "OpenAI APIの呼び出し中にエラーが発生しました: #{e.message}"
+    if @recipe.save
+      redirect_to @recipe, notice: 'レシピが正常に生成されました。'
+    else
+      render :new
     end
+  end
 
-    respond_to do |format|
-      format.html { render :show }
-      format.turbo_stream
-    end
+  def show
+    @recipe = Recipe.find(params[:id])
   end
 
 end

@@ -1,0 +1,9 @@
+<h1>レシピ一覧</h1>
+
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.content, recipe_path(recipe) %></li>
+  <% end %>
+</ul>
+
+<%= link_to '新しいレシピを作成する', new_recipe_path %>

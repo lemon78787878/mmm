@@ -85,3 +85,4 @@ gem 'httparty' # APIリクエストのため
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'openai'
 gem 'simple_calendar'
+gem 'ruby-openai'
