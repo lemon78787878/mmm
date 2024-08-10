@@ -1,24 +1,29 @@
-<h1>生成されたレシピ</h1>
+<div class='foods-sell-contents'>
+  <div class="foods-sell-main">
+    <h1>生成されたレシピ</h1>
 
-<!-- レシピ内容をパースして表示 -->
-<% recipe_lines = @recipe.content.split("\n") %>
-<p><strong><%= recipe_lines.first %></strong></p> <!-- 最初の行をタイトルとして表示 -->
+    <!-- レシピ内容をパースして表示 -->
+    <% recipe_lines = @recipe.content.split("\n") %>
+    <p><strong><%= recipe_lines.first %></strong></p> <!-- 最初の行をタイトルとして表示 -->
 
-<h2>材料</h2>
-<ul>
-  <% ingredients_end = recipe_lines.index { |line| line.start_with?('手順', '作り方') } || recipe_lines.size %>
-  <% recipe_lines[2...ingredients_end].each do |ingredient| %>
-    <li><%= ingredient %></li>
-  <% end %>
-</ul>
+    <h2>材料</h2>
+    <ul>
+      <% ingredients_end = recipe_lines.index { |line| line.start_with?('手順', '作り方') } || recipe_lines.size %>
+      <% recipe_lines[2...ingredients_end].each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+    </ul>
 
-<h2>手順</h2>
-<% instructions_start = recipe_lines.index { |line| line.start_with?('手順', '作り方') } %>
-<% if instructions_start %>
-  <p><%= recipe_lines[(instructions_start + 1)..-1].join('<br>').html_safe %></p>
-<% else %>
-  <p>手順が見つかりませんでした。</p>
-<% end %>
+    <h2>手順</h2>
+    <% instructions_start = recipe_lines.index { |line| line.start_with?('手順', '作り方') } %>
+    <% if instructions_start %>
+      <p><%= recipe_lines[(instructions_start + 1)..-1].join('<br>').html_safe %></p>
+    <% else %>
+      <p>手順が見つかりませんでした。</p>
+    <% end %>
 
-<!-- 新しいレシピを生成するリンク -->
-<%= link_to '新しいレシピを生成する', new_recipe_path %>
+    <!-- 新しいレシピを生成するリンク -->
+    <%= link_to '新しいレシピを生成する', new_recipe_path %>
+
+  </div>
+</div>
