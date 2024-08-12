@@ -9,9 +9,13 @@
         <%= text_field_tag :ingredients, '', placeholder: '例: トマト, チーズ, バジル' %>
       </div>
 
-      <div>
-        <%= submit_tag 'レシピを生成する' %>
+      <div class="purchase-btn">
+        <%= submit_tag 'レシピを生成する', class: "back-btn" %>
       </div>
+      <div class="purchase-btn">
+        <%= link_to 'もどる', recipes_path, class: "back-btn" %>
+      </div>
+
     <% end %>
   </div>
 </div>

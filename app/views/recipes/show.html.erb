@@ -23,7 +23,11 @@
     <% end %>
 
     <!-- 新しいレシピを生成するリンク -->
-    <%= link_to '新しいレシピを生成する', new_recipe_path %>
-
+    <div class="purchase-btn">
+      <%= link_to '新しいレシピを生成する', new_recipe_path, class: "back-btn" %>
+    </div>
+    <div class="purchase-btn">
+      <%= link_to 'もどる', recipes_path, class: "back-btn" %>
+    </div>
   </div>
 </div>
