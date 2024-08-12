@@ -2,13 +2,16 @@
   <div class="foods-sell-main">
     <h1>レシピ一覧</h1>
 
-
     <% @recipes.order(created_at: :desc).each do |recipe| %>
-      <div class="recipe">
-        <h2><%= link_to truncate(recipe.content.split("\n").first, length: 50), recipe_path(recipe) %></h2>
+      <% recipe_lines = recipe.content.split("\n") %>
+      <% recipe_name = recipe_lines.detect { |line| line.present? && !line.strip.start_with?('材料', '作り方') } %>
+      <% formatted_recipe_name = recipe_name.match(/^【.*】$/) ? recipe_name : "【#{recipe_name}】" %>
+      
+      <%= link_to recipe_path(recipe), class: "recipe" do %>
+        <h2><%= truncate(formatted_recipe_name, length: 50) %></h2>
         <p class="recipe-date">作成日: <%= recipe.created_at.strftime("%Y年%m月%d日") %></p>
         <p class="recipe-description"><%= truncate(recipe.content, length: 100) %></p>
-      </div>
+      <% end %>
     <% end %>
 
 
